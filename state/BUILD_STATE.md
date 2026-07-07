@@ -13,7 +13,7 @@ Started: 2026-07-07
 | 4     | media        | blocked | HUMAN: fill slots/approve | -         |
 | 5     | build        | done    | -                         | 2026-07-07 |
 | 6     | qa           | done    | scripts must pass         | 2026-07-07 |
-| 7     | deploy       | pending | HUMAN: confirm deploy     | -         |
+| 7     | deploy       | done    | HUMAN: confirm deploy     | 2026-07-07 |
 | 8     | handoff      | pending | -                         | -         |
 
 status: pending | in-progress | blocked | done
@@ -21,6 +21,8 @@ Notes:
 - Phase 0: Gate 1 confirmed by operator 2026-07-07, all paste facts confirmed. Open gaps (full hours, review count, years in business, certifications, payment methods) logged in QUESTIONS.md — will ship as placeholders where required. Testimonial use still needs explicit approval (see QUESTIONS.md).
 - Phase 2: style preview approved by operator 2026-07-07, no corrections. tokens.css + 4 self-hosted Barlow/Barlow Condensed woff2 in site/assets/fonts/.
 - Phase 4: shopping list written (client/assets-intake/slots/SHOPPING_LIST.md), still open/blocked (slots unfilled). Operator approved 2026-07-07 to proceed to Phase 5 with poster placeholders in the meantime — /ingest will swap real media in later with no code changes. Revisit Phase 4 status once slots are filled.
+- Phase 7 deploy: Hostinger Git chosen 2026-07-07. Committed main (41a6293), ran scripts/deploy-split.sh — production branch generated and force-pushed to origin/production (commit 9a83d07), cleanliness check passed (zero OS files leaked, only site/ contents at root). main is 1 commit ahead of origin/main locally (not pushed — out of scope of what was asked, operator can push separately if wanted).
+  NEXT for operator (one-time hPanel setup, deploy-hostinger skill rule 1): hPanel → Websites → Manage → Advanced → Git → connect this repo, branch `production`, target directory `public_html`. After the first pull, open File Manager and confirm public_html contains ONLY site files (delete any leftover zips/READMEs from prior manual uploads). Post-deploy checks once live (rule 4): all 6 pages 200, assets load, form test submission (currently placeholder mode — will just show the "call us" message), https padlock, .htaccess headers responding.
 - Phase 6 MANUAL REVIEW (qa-review skill): NAP (phone/address) verified character-for-character consistent across all 6 pages incl. JSON-LD; scanned for invented trust claims (years/licensed/certified/family-owned/award/warranty/BBB) - none found; all 5 pages' JSON-LD blocks validated as parseable JSON; nav/CTA click-paths verified (services anchor links, tel: links, map facade, form placeholder handler); no MEDIA_LOG rows at generated/in-use status (all planned, consistent with no media ingested yet). No criticals. Phase 6: DONE.
 - Phase 6 VISUAL QA (screenshot tool was unstable this session - verified via preview_snapshot/preview_inspect/preview_eval per visual-qa rule 2 fallback):
   - Home: 360/768/1280 PASS. Found+fixed a real bug: header hamburger toggle was flex-shrinking below 44px tap target at 360px (logo+phone+toggle competing for space) - added flex-shrink:0 to phone/toggle and truncation (ellipsis) to the logotype instead; re-verified 44x44px. Rationale conformance confirmed: angled hero media panel + about-list bullets (the ONE distinctive element), navy/charcoal contrast bands, orange reserved for CTAs, Barlow Condensed/Barlow pairing all visibly present.

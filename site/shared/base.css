@@ -241,11 +241,25 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------- Cards / Services ---------- */
+/* Explicit column counts per breakpoint (not auto-fit) so we always know
+   the row math and can prevent a single "widow" card left alone in the
+   last row: 1 col (mobile) -> 2 col (tablet, odd 5th card spans full
+   width instead of sitting alone beside empty space) -> 3 col (desktop,
+   5 cards = 3+2, no widow). */
 .services__grid {
   display: grid;
   gap: var(--space-6);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  grid-template-columns: 1fr;
   margin-bottom: var(--space-6);
+}
+@media (min-width: 640px) {
+  .services__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .services__grid > .card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+@media (min-width: 1024px) {
+  .services__grid { grid-template-columns: repeat(3, 1fr); }
 }
 .card {
   background: var(--color-bg);
@@ -432,8 +446,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .footer__inner {
   display: grid;
   gap: var(--space-8);
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  grid-template-columns: 1fr;
   padding-block: var(--space-4) var(--space-8);
+}
+@media (min-width: 768px) {
+  /* Jump straight from 1 to 3 columns (skip 2) - 3 items would leave a
+     widow card alone in the last row at an intermediate 2-col width. */
+  .footer__inner { grid-template-columns: repeat(3, 1fr); }
 }
 .footer__logotype { font-family: var(--font-heading); font-weight: 800; font-size: var(--text-lg); margin-bottom: var(--space-2); }
 .footer__col h3 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-3); color: rgba(255,255,255,0.6); }
