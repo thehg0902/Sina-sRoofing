@@ -8,7 +8,8 @@
 <meta property="og:title" content="Roof Repair in Richmond Hill, ON | Sina's Roofing & Repair">
 <meta property="og:description" content="Shingle, flat roof, gutter & skylight repairs in Richmond Hill, ON. Free estimates, emergency service available.">
 <meta property="og:type" content="website">
-<!-- og:url and og:image omitted: no confirmed domain or live hero photo yet - see state/QUESTIONS.md. Add once both exist. -->
+<!-- og:url and og:image omitted: no confirmed domain yet - see state/QUESTIONS.md. Hero poster now exists (assets/images/hero-intro-poster.webp); wire og:image once the domain gives us an absolute URL. -->
+<link rel="preload" href="assets/images/hero-intro-poster.webp" as="image" fetchpriority="high">
 <link rel="preload" href="assets/fonts/barlowcondensed-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="shared/tokens.css">
 <link rel="stylesheet" href="shared/base.css">
@@ -37,7 +38,7 @@
 
 <header class="header">
   <div class="container header__inner">
-    <a href="index.html" class="header__logotype">Sina's <span>Roofing &amp; Repair</span></a>
+    <a href="index.html" class="header__logotype"><img class="header__logo-img" src="assets/images/logo.png" alt="Sina's Roofing &amp; Repair" width="300" height="300"></a>
     <nav class="header__nav" aria-label="Primary" id="primary-nav">
       <ul class="header__nav-list">
         <li><a href="index.html" aria-current="page">Home</a></li>
@@ -68,8 +69,13 @@
         </div>
         <p class="hero__trust">5.0 rating on Google &middot; Free Estimates &middot; Emergency Service Available</p>
       </div>
-      <div class="hero__media" data-hero-media>
-        <!-- NOTE: hero-static.jpg wired here once ingested (Phase 4 shopping list, slot hero-static.jpg). See state/MEDIA_LOG.md -->
+      <div class="hero__media" data-hero-media aria-hidden="true">
+        <video class="hero__video" data-hero-video-a muted playsinline preload="auto" autoplay poster="assets/images/hero-intro-poster.webp" tabindex="-1">
+          <source src="assets/video/hero-intro.mp4" type="video/mp4">
+        </video>
+        <video class="hero__video" data-hero-video-b muted playsinline preload="auto" tabindex="-1">
+          <source src="assets/video/hero-loop.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </section>
@@ -120,10 +126,17 @@
   <section class="section section--gallery" id="gallery">
     <div class="container">
       <h2>See Our Work</h2>
-      <p class="section__intro">Real roofs, real repairs, before and after.</p>
-      <div class="gallery__grid" data-gallery-grid>
-        <!-- NOTE: before/after photos populated at Phase 4 media (client/assets-intake/slots/), wired at Phase 5. See state/MEDIA_LOG.md -->
-        <p class="gallery__empty-note">Photos coming soon — check back shortly, or call us to see examples of our work.</p>
+      <p class="section__intro">Real roofs, real repairs.</p>
+      <div class="gallery__grid gallery__grid--teaser" data-gallery-grid>
+        <figure class="gallery__item" data-animate>
+          <img src="assets/images/gallery1.webp" srcset="assets/images/gallery1-480.webp 480w, assets/images/gallery1.webp 640w" sizes="(max-width: 767px) 100vw, 33vw" width="640" height="853" alt="Finished shingle roof, low angle view" loading="lazy">
+        </figure>
+        <figure class="gallery__item" data-animate>
+          <img src="assets/images/gallery5.webp" srcset="assets/images/gallery5-480.webp 480w, assets/images/gallery5.webp 640w" sizes="(max-width: 767px) 100vw, 33vw" width="640" height="853" alt="Roofing crew on a completed rooftop" loading="lazy">
+        </figure>
+        <figure class="gallery__item" data-animate>
+          <img src="assets/images/gallery6.webp" srcset="assets/images/gallery6-480.webp 480w, assets/images/gallery6.webp 640w" sizes="(max-width: 767px) 100vw, 33vw" width="640" height="640" alt="Soffit and fascia before and after replacement" loading="lazy">
+        </figure>
       </div>
       <a href="gallery/" class="section__cta-link">View the gallery &rarr;</a>
     </div>

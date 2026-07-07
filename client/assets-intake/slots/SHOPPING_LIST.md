@@ -1,55 +1,61 @@
 # Media Shopping List — Sina's Roofing & Repair
 
-Style block (paste verbatim into every generation prompt for consistency):
-"Photo-real documentary photography, natural daylight or lightly overcast
-sky, sharp focus, high contrast, no illustration, no stock-glossy
-staging, no text, no watermarks, palette reading navy/charcoal/warm
-neutral, Ontario residential architecture."
-
-Default path: generate these yourself in Higgsfield OR drop your own real
-photos into the matching folder below, tick `[x]`, then run `/ingest`.
-Unfilled, unticked slots come back as Higgsfield candidates — Claude will
-ask in-chat for named approval before spending any credits (never
-generated without your explicit go-ahead).
-
-Interior page heroes (Services/Gallery/About/Contact) use a solid
-navy/charcoal CSS background per the "Angled Trust" direction — no photo
-asset needed there (see state/DECISIONS.md Phase 4 note).
+v2 (2026-07-07): supersedes the original before/after-pairs + static-hero
+plan below. The operator supplied real photos/video directly instead of
+filling those slots — this list now reflects what was actually
+delivered, all operator-provided (model=operator, credits=0, no
+generation involved). See state/DECISIONS.md for the full reasoning.
 
 ---
 
-## hero-static.jpg        [ ] filled
+## hero-intro.mp4        [x] filled
 folder: Home - Hero/
-treatment: static image - 16:9, ~1800x1000px source
-Home hero background. Real photo of a Richmond Hill-area roof preferred if
-you have one; otherwise generation is fine — this is atmospheric/ambient,
-not presented as a specific completed job.
-PROMPT ->
-A residential asphalt shingle roof on a suburban Ontario home, viewed from
-a slightly low angle emphasizing strong roofline geometry and clean
-shingle lines, clear or lightly overcast sky. Photo-real documentary
-photography, natural daylight or lightly overcast sky, sharp focus, high
-contrast, no illustration, no stock-glossy staging, no text, no
-watermarks, palette reading navy/charcoal/warm neutral, Ontario
-residential architecture. Composition: roofline enters from lower-left,
-open sky as negative space in the upper-right for a headline overlay.
+treatment: intro-loop - real footage, wide shot (was hero1.mp4, 1916x1080)
+Primary clip in the alternating two-clip hero (site/shared/main.js custom
+player, see state/DECISIONS.md). Poster = first frame (LCP candidate).
+PROMPT -> N/A (operator-provided real footage)
 
-## gallery-before-01.jpg / gallery-after-01.jpg        [ ] filled
-folder: Gallery - Before After/
-treatment: static image pair - 4:3, ~1600x1200px source, matching angle
-REAL PHOTOS ONLY — do not generate. Before/after repair proof must be an
-actual completed job; an AI-generated "before/after" pair would
-misrepresent real work and is not offered as a Higgsfield candidate.
-PROMPT -> N/A (real client photo required)
+## hero-loop.mp4        [x] filled
+folder: Home - Hero/
+treatment: loop - real footage, squarer shot (was hero2.mp4, 1660x1244)
+Secondary clip in the alternating rotation, object-fit:cover crops to
+the hero band.
+PROMPT -> N/A (operator-provided real footage)
 
-## gallery-before-02.jpg / gallery-after-02.jpg        [ ] filled
-folder: Gallery - Before After/
-treatment: static image pair - 4:3, ~1600x1200px source, matching angle
-REAL PHOTOS ONLY — do not generate. Same note as above.
-PROMPT -> N/A (real client photo required)
+## gallery1.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - finished shingle roof, low angle
+General work-portfolio shot (operator: "forget before/after, just make a
+gallery of work done" - no pairing).
+PROMPT -> N/A (operator-provided real photo)
 
-## gallery-before-03.jpg / gallery-after-03.jpg        [ ] filled
-folder: Gallery - Before After/
-treatment: static image pair - 4:3, ~1600x1200px source, matching angle
-REAL PHOTOS ONLY — do not generate. Same note as above.
-PROMPT -> N/A (real client photo required)
+## gallery2.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - mid-installation, nail gun/underlayment
+PROMPT -> N/A (operator-provided real photo)
+
+## gallery3.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - branded company truck
+PROMPT -> N/A (operator-provided real photo)
+
+## gallery4.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - house exterior, truck in driveway
+PROMPT -> N/A (operator-provided real photo)
+
+## gallery5.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - crew on rooftop
+PROMPT -> N/A (operator-provided real photo)
+
+## gallery6.webp        [x] filled
+folder: Gallery - Portfolio/
+treatment: image - soffit/fascia before+after composite
+PROMPT -> N/A (operator-provided real photo)
+
+## logo.png        [x] filled
+folder: (slots root)
+treatment: alpha-or-image - real logo, RGBA 1254x1254, has transparency
+Passthrough per image-optimization rule 1a - never flattened.
+PROMPT -> N/A (operator-provided real asset)

@@ -113,16 +113,10 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   padding-block: var(--space-3);
 }
 .header__logotype {
-  font-family: var(--font-heading);
-  font-weight: 800;
-  font-size: var(--text-lg);
-  color: var(--color-primary);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
+  display: block;
+  flex-shrink: 0;
 }
-.header__logotype span { color: var(--color-text); }
+.header__logo-img { height: 40px; width: auto; }
 .header__nav-list {
   display: flex;
   gap: var(--space-6);
@@ -206,14 +200,20 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero__trust { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 600; }
 .section--hero-dark .hero__trust { color: rgba(255,255,255,0.75); }
 .hero__media {
+  position: relative;
+  overflow: hidden;
   min-height: 280px;
   background: var(--color-surface) linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
   clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 94%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 @media (min-width: 1024px) { .hero__media { min-height: 420px; } }
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -297,6 +297,23 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   gap: var(--space-4);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
 }
+/* Teaser (3 items, e.g. Home page): explicit 1->3 columns, skipping 2,
+   same widow-avoidance principle as .footer__inner - 3 items in 2
+   columns would leave the 3rd alone. */
+.gallery__grid--teaser { grid-template-columns: 1fr; }
+@media (min-width: 768px) {
+  .gallery__grid--teaser { grid-template-columns: repeat(3, 1fr); }
+}
+.gallery__item {
+  margin: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-surface);
+}
+/* Natural aspect ratio per image, not a forced uniform crop - the source
+   mix (portrait roof shots, a landscape truck shot, a square before/after
+   composite) would lose meaningful content under a one-size-fits-all crop. */
+.gallery__item img { width: 100%; height: auto; display: block; }
 .gallery__empty-note {
   grid-column: 1 / -1;
   text-align: center;
@@ -454,6 +471,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
      widow card alone in the last row at an intermediate 2-col width. */
   .footer__inner { grid-template-columns: repeat(3, 1fr); }
 }
+/* Footer stays text (not the logo image): the logo's navy wordmark has
+   no contrast against the dark navy footer background. */
 .footer__logotype { font-family: var(--font-heading); font-weight: 800; font-size: var(--text-lg); margin-bottom: var(--space-2); }
 .footer__col h3 { font-size: var(--text-sm); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: var(--space-3); color: rgba(255,255,255,0.6); }
 .footer__col ul { display: grid; gap: var(--space-2); }
