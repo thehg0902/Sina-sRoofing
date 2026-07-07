@@ -29,7 +29,8 @@ for f in html_files:
     # "../assets/..." from a page folder and "assets/..." from site/ root
     # both pass when the target exists. Folder refs (about/) hit index.html.
     for m in re.finditer(r'(?:src|href)="([^"#][^":]*?)"', text):
-        ref = m.group(1)
+        ref = m.group(1).split("#", 1)[0]  # strip path#anchor fragment before resolving
+        if not ref: continue  # was a bare "page/#anchor" folder ref - dir check below covers it
         if ref.startswith(("http", "mailto:", "tel:", "//", "data:")): continue
         target = (f.parent / ref).resolve()
         if target.is_dir(): target = target / "index.html"

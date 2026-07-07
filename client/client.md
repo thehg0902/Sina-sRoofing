@@ -13,8 +13,65 @@
 - Offer / guarantee / promo:
 - Mood (3-6 adjectives):
 - Never say / avoid:
+<!-- suggested: fast, honest communication — quote matched final price, no surprises -->
+<!-- suggested: one-stop roofing shop — shingle, flat roof, gutters, skylights, all repair types under one crew -->
+<!-- suggested: free estimates + emergency call-outs lower the barrier to a first call -->
 
 ## Vibe
+Website feel / vibe
+
+The brand gives off a modern contractor feel. It should look reliable, sharp, and direct. Think:
+
+Bold. Clean. Dependable. Local. Strong. No-nonsense.
+
+The design should feel like a company that handles serious repair work, emergency roofing issues, shingles, leaks, storm damage, and residential roof maintenance. It should not feel too luxury or artistic. It should feel like a roofing company homeowners can trust quickly.
+
+Visual direction
+
+Use a white or very light background for most of the website, with strong navy and charcoal sections for contrast. The orange/red accent should be used sparingly for buttons, highlights, icons, and emergency/service callouts.
+
+The site should have:
+
+Large bold headlines
+Clean rectangular sections
+Strong roof/house imagery
+Sharp angled accents inspired by the logo
+Simple service cards
+Trust badges
+Before/after repair photos
+Clear call-to-action buttons like Get a Free Roof Inspection or Call for Roofing Repair
+
+Color palette
+Use	Color	Hex
+Primary Navy	Deep trustworthy blue	#003B73
+Dark Navy	Strong logo blue shadow	#002A55
+Charcoal Black	Roofing/shingle dark tone	#1C1C1E
+Dark Gray	Secondary dark surfaces	#2F3033
+Medium Gray	Body text / muted details	#6B6F76
+Light Gray	Section backgrounds	#F3F5F7
+Soft Border Gray	Dividers / subtle lines	#D9DEE5
+White	Main clean background	#FFFFFF
+Repair Orange	CTA accent / urgency	#F05A28
+Deep Red-Orange	Hover / warning accent	#C93A1A
+Best color balance
+
+Use about 60% white/light gray, 25% navy/charcoal, and 15% orange accents.
+
+The orange should not dominate. It should only appear where you want attention: buttons, emergency repair banners, small arrows, active states, icons, and “roof leak repair” callouts.
+
+Overall website style
+
+The website should feel like:
+
+“A clean modern roofing repair company with strong local trust, fast service, and professional workmanship.”
+
+A good homepage headline could be:
+
+Reliable Roofing Repairs When Your Home Needs It Most
+
+or
+
+Strong Roofs. Fast Repairs. Trusted Local Service.
 <!-- Optional. Describe the FEEL the website should have, in your own
      words: sites you admire, energy, era, textures, "liquid glass over
      dark video", anything. Drop reference images/screenshots into
@@ -110,10 +167,68 @@
 - Special requests:
 
 ## Business Profile Paste
-<!-- Paste anything below this line: GBP about panel, Google Maps listing
-     text, hours block, services list, reviews, the old website's text,
-     socials. Unstructured is fine. The system extracts facts into Auto. -->
+Sina’s Roofing & Repair
+5.0175 Google reviews
+Roofing contractor in Richmond Hill, Ontario
+Directions
+Reviews
++3
+
+Address: 41 Crosby Ave, Richmond Hill, ON L4C 0B2
+Get There:
+30 mins
+·
+15 mins
+Phone: (647) 769-2769
+Hours:
+Open · Closes 7 p.m.
+Province: Ontario
+Suggest an edit · Own this business?
+Add missing information
+Add website
+
+
+
+Areas served: Richmond Hill and nearby areas
+Sina’s Roofing & Repair
+Sina’s Roofing & Repair
+on Google
+Shingle roof flat roof and repairs
+Feb 18, 2026
+View All
+From Sina’s Roofing & Repair
+"Shingle Roofs, Flat Roofs, Gutters, All kind of Roof Repairs, Skylights. Emergency services available. Free Estimates."
+Profiles
+
+Instagram
+
+Facebook
+Reviews
+Reviews from the web
+5/5Facebook · 5 votes
+Google reviews
+Hamid Zarazvand	"Like, type of shingles and color, its quality and the timing of the whole job."
+Marco	"Very happy with the outcome and highly recommend their service."
+foad zolfaghari	"Sina answered me promptly and gave a quote that was in line with final price."
+View all Google reviews
 
 ## Auto (generated — do not hand-edit)
 <!-- Written by the system at Phase 0 (client-enrichment). Empty in the
      template. Corrections go in Overrides, never here. -->
+- name: Sina's Roofing & Repair  [paste][confirmed]
+- category: Roofing contractor  [paste][confirmed]
+- phone: (647) 769-2769  [paste][confirmed]
+- address: 41 Crosby Ave, Richmond Hill, ON L4C 0B2  [paste][confirmed]
+- province: Ontario  [paste][confirmed]
+- service area: Richmond Hill and nearby areas  [paste][confirmed]
+- services: Shingle roofs, flat roofs, gutters, roof repairs (all kinds), skylights  [paste][confirmed]
+- emergency / after-hours: Emergency services available  [paste][confirmed]
+- offer / promo: Free Estimates  [paste][confirmed]
+- socials: Instagram, Facebook  [paste][confirmed]
+- google rating: 5.0 (review count unclear — paste text garbled, see QUESTIONS.md)  [paste][confirmed]
+- facebook rating: 5/5 from 5 votes  [paste][confirmed]
+
+### Testimonial candidates
+- Hamid Zarazvand: "Like, type of shingles and color, its quality and the timing of the whole job."  [paste][needs-approval]
+- Marco: "Very happy with the outcome and highly recommend their service."  [paste][needs-approval]
+- foad zolfaghari: "Sina answered me promptly and gave a quote that was in line with final price."  [paste][needs-approval]

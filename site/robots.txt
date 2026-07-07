@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+# Sitemap.xml deferred: no confirmed domain yet (client.md Overrides
+# "Domain:" is empty - see state/QUESTIONS.md). Generate sitemap.xml and
+# add a Sitemap: line here once the domain is known (deploy phase).
