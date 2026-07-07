@@ -176,14 +176,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 }
 
 /* ---------- Hero ---------- */
-.hero__grid {
-  display: grid;
-  gap: var(--space-8);
-  align-items: center;
-}
-@media (min-width: 1024px) {
-  .hero__grid { grid-template-columns: 1fr 1fr; }
-}
 .hero__eyebrow {
   font-weight: 600;
   color: var(--color-error);
@@ -199,20 +191,43 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero__actions { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-4); }
 .hero__trust { font-size: var(--text-sm); color: var(--color-text-muted); font-weight: 600; }
 .section--hero-dark .hero__trust { color: rgba(255,255,255,0.75); }
-.hero__media {
+
+/* Full-bleed video backdrop hero: video + dim scrim behind, copy overlaid */
+.section--hero-video {
   position: relative;
   overflow: hidden;
-  min-height: 280px;
-  background: var(--color-surface) linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-  clip-path: polygon(6% 0, 100% 0, 100% 100%, 0 94%);
+  display: flex;
+  align-items: center;
+  min-height: 60svh;
+  padding-block: var(--space-10) var(--space-12);
 }
-@media (min-width: 1024px) { .hero__media { min-height: 420px; } }
+@media (min-width: 1024px) {
+  .section--hero-video { min-height: 80svh; }
+}
+.hero__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
 .hero__video {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  /* gradient, not a flat opacity guess (hero-patterns.md) - strong where
+     the copy sits, lighter toward the far edge so the video still reads */
+  background: linear-gradient(100deg, rgba(0,42,85,0.85) 0%, rgba(0,42,85,0.65) 45%, rgba(0,42,85,0.35) 100%);
+}
+.section--hero-video .hero__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin-inline: 0;
 }
 
 /* ---------- Buttons ---------- */
